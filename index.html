@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case-converter</title>
+</head>
+
+<body>
+
+    <div class="w-full h-screen flex justify-center bg-amber-500">
+        <!-- content-box -->
+        <div class="flex flex-col">
+            <div class="border-2 w-screen">
+                <h1 class="text-4xl">Case Converter</h1>
+            </div>
+            <div class="flex flex-col ml-auto mr-auto">
+                <div class="justify-center">Accidentally left the caps lock on and typed something, but can't be bothered to start
+                    again and retype it all?</div>
+                <div>dont Bother just Simply enter your text and choose the case you want to convert it to.</div>
+                <div><textarea name="" class="resize-none border-2 w-3/4 h-96 px-3" id=""></textarea></div>
+                <div><span>Character Counter:<span>0</span></span>
+                    <span>Word Count:<span>0</span></span>
+                    <span>Line Count:<span>0</span></span>
+                </div>
+                <!-- All Buttons -->
+                <div>
+                    <button class="border-2 px-3 py-1 ">Sentence case</button>
+                    <button class="border-2 px-3 py-1">Lower case</button>
+                    <button class="border-2 px-3 py-1">Upper case</button>
+                    <button class="border-2 px-3 py-1">alternamte case</button>
+                    <button class="border-2 px-3 py-1">Title case</button>
+                    <button class="border-2 px-3 py-1">Inverse case</button>
+                    <button class="border-2 px-3 py-1">Clear</button>
+                    <button class="border-2 px-3 py-1">Copy to clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- npx tailwindcss -i src/tailwind.css -o ./styles.css --watch -->
+</body>
+
+</html>
