@@ -1,71 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="./styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case-converter</title>
-  </head>
 
-  <body>
-    <div class="w-full h-screen flex justify-center">
-      <!-- content-box -->
-      <div class="flex flex-col">
-        <div class="border-b-2 w-screen p-2 bg-amber-500 shadow-mg">
-          <h1 class="text-4xl">Case Converter</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="./styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case-converter</title>
+</head>
+
+<body>
+  <div class="w-full h-screen flex justify-center">
+    <!-- content-box -->
+    <div class="flex flex-col">
+      <div class="border-b-2 w-screen p-2 bg-amber-500 shadow-mg">
+        <h1 class="text-4xl">Case Converter</h1>
+      </div>
+      <div class="flex flex-col ml-auto mr-auto">
+        <div class="justify-center text-xl mt-3">
+          Accidentally left the caps lock on and typed something, but can't be
+          bothered to start again and retype it all?
         </div>
-        <div class="flex flex-col ml-auto mr-auto">
-          <div class="justify-center text-xl mt-3">
-            Accidentally left the caps lock on and typed something, but can't be
-            bothered to start again and retype it all?
-          </div>
-          <div class="text-xl mb-4">
-            dont Bother just Simply enter your text and choose the case you want
-            to convert it to.
-          </div>
-          <div>
-            <textarea
-              name=""
-              class="resize-none border-2 w-full h-80 px-3"
-              id="textarea"></textarea>
-          </div>
-          <div>
-            <span class="ml-4"
-              >Character count: <span id="ch-counter">0</span></span
-            >
-            <span class="ml-8">Word Count: <span id="wdCounter">0</span></span>
-            <span class="ml-8">Line Count: <span id="linesCount">0</span></span>
-          </div>
-          <!-- All Buttons -->
-          <div class="ml-auto mr-auto mt-3">
-            <button id="sentenceBtn" class="border-2 px-3 py-1 ml- mr-5">
-              Sentence case
-            </button>
-            <button id="LowerBtn" class="border-2 px-3 py-1 mr-5">
-              Lower case
-            </button>
-            <button id="upperBtn" class="border-2 px-3 py-1 mr-5">
-              Upper case
-            </button>
-            <button id="" class="border-2 px-3 py-1 mr-5">
-              alternamte case
-            </button>
-            <button class="border-2 px-3 py-1 mr-5">Title case</button>
-            <button class="border-2 px-3 py-1 mr-5">Inverse case</button>
-          </div>
-          <div class="flex flex-row justify-center mt-2">
-            <button class="border-2 px-3 py-1 mr-5">Download Text</button>
-            <button id="clear" class="border-2 px-3 py-1 mr-5">Clear</button>
-            <button id="copyBtn" class="border-2 px-3 py-1">
-              Copy to clipboard
-            </button>
-          </div>
+        <div class="text-xl mb-4">
+          dont Bother just Simply enter your text and choose the case you want
+          to convert it to.
+        </div>
+        <div>
+          <textarea name="" class="resize-none border-2 w-full h-80 px-3" id="textarea"></textarea>
+        </div>
+        <div>
+          <span class="ml-4">Character count: <span id="ch-counter">0</span></span>
+          <span class="ml-8">Word Count: <span id="wdCounter">0</span></span>
+          <span class="ml-8">Line Count: <span id="linesCount">0</span></span>
+        </div>
+        <!-- All Buttons -->
+        <div class="ml-auto mr-auto mt-3">
+          <button id="sentenceBtn" class="border-2 px-3 py-1 ml- mr-5">
+            Sentence case
+          </button>
+          <button id="LowerBtn" class="border-2 px-3 py-1 mr-5">
+            Lower case
+          </button>
+          <button id="upperBtn" class="border-2 px-3 py-1 mr-5">
+            Upper case
+          </button>
+          <button id="" class="border-2 px-3 py-1 mr-5">
+            alternamte case
+          </button>
+          <button id="titleBtn" class="border-2 px-3 py-1 mr-5">Title case</button>
+          <button class="border-2 px-3 py-1 mr-5">Inverse case</button>
+        </div>
+        <div class="flex flex-row justify-center mt-2">
+          <button class="border-2 px-3 py-1 mr-5">Download Text</button>
+          <button id="clear" class="border-2 px-3 py-1 mr-5">Clear</button>
+          <button id="copyBtn" class="border-2 px-3 py-1">Copy to clipboard</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="./app.js"></script>
-    <!-- npx tailwindcss -i src/tailwind.css -o ./styles.css --watch -->
-  </body>
+  <script src="./app.js"></script>
+  <!-- npx tailwindcss -i src/tailwind.css -o ./styles.css --watch -->
+</body>
+
 </html>
