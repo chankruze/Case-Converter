@@ -176,18 +176,17 @@ titleBTN.addEventListener('click', () => {
     for (var i = 0; i < str.length; i++) {
         // TODO
     //   if(str[i].includes('\n')){
-        //  newStr =   str[i].replace(/(\r\n|\n|\r)/gm, " ")
-        // //   console.log(newStr.split(" "));  
-        //   const Newsplit = newStr.split(" ");
-        //   console.log(Newsplit);
-        //   for(var j = 0; j < Newsplit.length; j++) {
-        //   Newsplit[j] = Newsplit[j][0].toUpperCase() + Newsplit[j].slice(1);
-        //   console.log(Newsplit[j]);
-        // //   textarea.value = Newsplit.join(' ')
-        // str[i] = `${Newsplit[0]}\n${Newsplit[1]}`
-        //   }
+    //      newStr =   str[i].replace(/(\r\n|\n|\r)/gm, " ")
+    //     //   console.log(newStr.split(" "));  
+    //       const Newsplit = newStr.split(" ");
+    //       console.log(Newsplit);
+    //       for(var j = 0; j < Newsplit.length; j++) {
+    //       Newsplit[j] = Newsplit[j][0].toUpperCase() + Newsplit[j].slice(1);
+    //       console.log(Newsplit[j]);
+    //     //   textarea.value = Newsplit.join(' ')
+    //     str[i] = `${Newsplit[0]}\n${Newsplit[1]}`
+    //       }
       str[i] = str[i][0].toUpperCase() + str[i].slice(1); 
     }
     textarea.value = str.join(' ');
-    }
-)
+    })
