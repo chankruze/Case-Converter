@@ -9,7 +9,7 @@ const sentenceBTN = document.getElementById('sentenceBtn');
 const titleBTN = document.getElementById('titleBtn');
 const copyBTN = document.getElementById('copyBtn');
 const inverseBTN = document.getElementById('inverseBtn');
-const alternateBTN  = document.getElementById('alternateBtn');
+const alternateBTN = document.getElementById('alternateBtn');
 const downloadBTN = document.getElementById('downloadBtn')
 
 textarea.addEventListener("keyup", () => {
@@ -77,8 +77,8 @@ copyBTN.addEventListener('click', () => {
 })
 
 // INVERSE BTN
- inverseBTN.addEventListener('click', () =>{
-    str =  textarea.value;
+inverseBTN.addEventListener('click', () => {
+    str = textarea.value;
     str2 = "";
     for (var i = 0; i < str.length; i++) {
         if (str.charAt(i) === str.charAt(i).toLowerCase()) {
@@ -90,73 +90,73 @@ copyBTN.addEventListener('click', () => {
         }
     }
     textarea.value = str2;
- })
+})
 
 
 //  ALTERNATE BTN
- alternateBTN.addEventListener('click', ()=>{
-   str = textarea.value;
-   str2 = '';
-   for(var i=0;i<str.length;i++){
-    if(i % 2 == 0){
-       if(str.charAt(i) === str.charAt(i).toLowerCase()){
-        str2 += str.charAt(i).toUpperCase();
-       }
-       else if(str.charAt(i) === str.charAt(i).toUpperCase()){
-        str2 += str.charAt(i).toLowerCase();
-       }
-    } else {
-        str2 += str.charAt(i);
-      }
-   }
-   textarea.value =str2;
- })
- 
-//  DOWNLOAD BTN
- // Start file download.
-downloadBTN.addEventListener("click", function() {
-     // Generate download of hello.txt 
-     // file with some content
-     var text = textarea.value;
-     var filename = "CaseConverter.txt";
-   
-     download(filename, text);
- }, false);
+alternateBTN.addEventListener('click', () => {
+    str = textarea.value;
+    str2 = '';
+    for (var i = 0; i < str.length; i++) {
+        if (i % 2 == 0) {
+            if (str.charAt(i) === str.charAt(i).toLowerCase()) {
+                str2 += str.charAt(i).toUpperCase();
+            }
+            else if (str.charAt(i) === str.charAt(i).toUpperCase()) {
+                str2 += str.charAt(i).toLowerCase();
+            }
+        } else {
+            str2 += str.charAt(i);
+        }
+    }
+    textarea.value = str2;
+})
 
- function download(file, text) {
-              
+//  DOWNLOAD BTN
+// Start file download.
+downloadBTN.addEventListener("click", function () {
+    // Generate download of hello.txt 
+    // file with some content
+    var text = textarea.value;
+    var filename = "CaseConverter.txt";
+
+    download(filename, text);
+}, false);
+
+function download(file, text) {
+
     //creating an invisible element
     var element = document.createElement('a');
-    element.setAttribute('href', 
-    'data:text/plain;charset=utf-8, '
-    + encodeURIComponent(text));
+    element.setAttribute('href',
+        'data:text/plain;charset=utf-8, '
+        + encodeURIComponent(text));
     element.setAttribute('download', file);
-  
+
     // Above code is equivalent to
     // <a href="path of file" download="file name">
-  
+
     document.body.appendChild(element);
-  
+
     //onClick property
     element.click();
-  
+
     document.body.removeChild(element);
 }
 
 
 
-                    //    TODO
+//    TODO
 
 // SENTENCECASE BTN
- sentenceBTN.addEventListener('click', ()=>{
+sentenceBTN.addEventListener('click', () => {
     SentenceCASE();
 })
- function  SentenceCASE(){
-     var text = textarea.value.toLowerCase();
+function SentenceCASE() {
+    var text = textarea.value.toLowerCase();
     //  console.log(text[16])
-    var newSTR ='';
-    for(i =0;i<text.length;i++){
-        if(i == 0){
+    var newSTR = '';
+    for (i = 0; i < text.length; i++) {
+        if (i == 0) {
             newSTR += text[i].toUpperCase() + text.slice(1);
         }
         // "." TODO
@@ -167,26 +167,26 @@ downloadBTN.addEventListener("click", function() {
         // else newSTR = text.toLowerCase();
     }
     textarea.value = newSTR;
- }
+}
 
- //  TITLECASE BTN
+//  TITLECASE BTN
 titleBTN.addEventListener('click', () => {
 
     str = textarea.value.toLowerCase().split(' ');
     for (var i = 0; i < str.length; i++) {
         // TODO
-    //   if(str[i].includes('\n')){
-    //      newStr =   str[i].replace(/(\r\n|\n|\r)/gm, " ")
-    //     //   console.log(newStr.split(" "));  
-    //       const Newsplit = newStr.split(" ");
-    //       console.log(Newsplit);
-    //       for(var j = 0; j < Newsplit.length; j++) {
-    //       Newsplit[j] = Newsplit[j][0].toUpperCase() + Newsplit[j].slice(1);
-    //       console.log(Newsplit[j]);
-    //     //   textarea.value = Newsplit.join(' ')
-    //     str[i] = `${Newsplit[0]}\n${Newsplit[1]}`
-    //       }
-      str[i] = str[i][0].toUpperCase() + str[i].slice(1); 
+        //   if(str[i].includes('\n')){
+        //      newStr =   str[i].replace(/(\r\n|\n|\r)/gm, " ")
+        //     //   console.log(newStr.split(" "));  
+        //       const Newsplit = newStr.split(" ");
+        //       console.log(Newsplit);
+        //       for(var j = 0; j < Newsplit.length; j++) {
+        //       Newsplit[j] = Newsplit[j][0].toUpperCase() + Newsplit[j].slice(1);
+        //       console.log(Newsplit[j]);
+        //     //   textarea.value = Newsplit.join(' ')
+        //     str[i] = `${Newsplit[0]}\n${Newsplit[1]}`
+        //       }
+        str[i] = str[i][0].toUpperCase() + str[i].slice(1);
     }
     textarea.value = str.join(' ');
-    })
+})
