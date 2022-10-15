@@ -52,6 +52,7 @@ clearBTN.addEventListener("click", () => {
     textarea.value = "";
     counterWD.innerText = "0";
     counterCH.innerText = "0";
+    counterLines.innerText = "0";
 });
 
 // LOWERCASE BTN
@@ -143,30 +144,16 @@ function download(file, text) {
     document.body.removeChild(element);
 }
 
-
-
-//    TODO
-
 // SENTENCECASE BTN
 sentenceBTN.addEventListener('click', () => {
     SentenceCASE();
 })
 function SentenceCASE() {
-    var text = textarea.value.toLowerCase();
-    //  console.log(text[16])
-    var newSTR = '';
-    for (i = 0; i < text.length; i++) {
-        if (i == 0) {
-            newSTR += text[i].toUpperCase() + text.slice(1);
-        }
-        // "." TODO
-        // if(text[i] == '.'){
-        //     console.log("yes")
-        //     newSTR += text.replace("text[i+1],text[i+1].toUpperCase()");
-        // }
-        // else newSTR = text.toLowerCase();
-    }
-    textarea.value = newSTR;
+    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,
+    function(c){
+      return c.toUpperCase()
+    });
+    textarea.value = sentececase;
 }
 
 //  TITLECASE BTN
