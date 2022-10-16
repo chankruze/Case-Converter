@@ -149,8 +149,7 @@ sentenceBTN.addEventListener('click', () => {
     SentenceCASE();
 })
 function SentenceCASE() {
-    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,
-    function(c){
+    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function(c){
       return c.toUpperCase()
     });
     textarea.value = sentececase;

@@ -28,6 +28,11 @@
     footer {
       background-color: #D3DECB;
     }
+    /* @media only screen and (max-width: 320px) {
+        #links-div{
+          width: 100%;
+        }
+    }  */
   </style>
 </head>
 
@@ -36,14 +41,14 @@
     <!-- content-box -->
     <div class="flex flex-col">
       <div class="border-b-2 w-screen p-2 bg-amber-500 shadow-mg">
-        <h1 class="text-4xl" id="Intro"><a href="./index.html">Case Converter</a></h1>
+        <h1 class=" text-4xl" id="Intro"><a href="./index.html">Case Converter</a></h1>
       </div>
-      <div class="flex flex-col ml-auto mr-auto">
-        <div class="justify-center text-xl mt-4" id="Intro">
+      <div class="flex flex-col ml-auto mr-auto px-2">
+        <div class="justify-center text-xl sm:text-xl mt-4" id="Intro">
           Accidentally left the caps lock on and typed something, but can't be
           bothered to start again and retype it all?
         </div>
-        <div class="text-xl mb-4" id="Intro">
+        <div class="sm:text-xl mb-4" id="Intro">
           dont Bother just Simply enter your text and choose the case you want
           to convert it to.
         </div>
@@ -51,37 +56,40 @@
           <textarea name="" class="resize-none border-2 w-full h-80 px-3" id="textarea"></textarea>
         </div>
         <div>
-          <span class="ml-4">Character count: <span id="ch-counter">0</span></span>
-          <span class="ml-8">Word Count: <span id="wdCounter">0</span></span>
-          <span class="ml-8">Line Count: <span id="linesCount">0</span></span>
+          <span class="sm:ml-4">Character count: <span id="ch-counter">0</span></span>
+          <span class="ml-3 sm:ml-8">Word Count: <span id="wdCounter">0</span></span>
+          <span class="ml-3 sm:ml-8">Line Count: <span id="linesCount">0</span></span>
         </div>
         <!-- All Buttons -->
-        <div class="ml-auto mr-auto mt-4">
-          <button id="sentenceBtn" class=" px-3 py-1 ml- mr-5">
+        <div class="ml-auto mr-auto mt-4 px-4 pl-4">
+          <button id="sentenceBtn" class="px-3 py-1 ml-2 mr-1 sm:px-3 sm:py-1 sm:mr-5">
             Sentence case
           </button>
-          <button id="LowerBtn" class=" px-3 py-1 mr-5">
+          <button id="LowerBtn" class=" px-3 py-1  sm:px-3 sm:py-1 sm:mr-5">
             Lower case
           </button>
-          <button id="upperBtn" class=" px-3 py-1 mr-5">
+          <button id="upperBtn" class=" px-3 py-1 ml-2 mt-1  sm:px-3 sm:py-1 sm:mr-5">
             Upper case
-          </button>
-          <button id="alternateBtn" class=" px-3 py-1 mr-5">
+          </button> 
+          <button id="alternateBtn" class="px-3 py-1  ml-1 sm:px-3 sm:py-1 sm:mr-5">
             aLtErNate case
           </button>
-          <button id="titleBtn" class=" px-3 py-1 mr-5">Title case</button>
-          <button id="inverseBtn" class=" px-3 py-1 mr-5">Inverse case</button>
+          <button id="titleBtn" class="px-3 py-1 mt-1 ml-4 sm:px-3 sm:py-1 sm:mr-5">Title case</button>
+          <button id="inverseBtn" class="ml-2 px-3 py-1 sm:px-3 sm:py-1 sm:mr-5">Inverse case</button>
         </div>
-        <div class="flex flex-row justify-center mt-5">
-          <button value="download" id="downloadBtn" class=" px-3 py-1 mr-5">Download Text</button>
-          <button id="clear" class=" px-8 py-1 mr-5">Clear</button>
-          <button id="copyBtn" class=" px-3 py-1">Copy to clipboard</button>
+        <div class="mt-1 sm:flex sm:flex-row justify-center sm:mt-2 sm:mt-5">
+          <button value="download" id="downloadBtn" class="px-3 py-1 ml-2 sm:px-3 sm:py-1 sm:mr-5">Download Text</button>
+          <button id="clear" class="px-3 py-1 hidden sm:block sm:px-8 sm:py-1 sm:mr-5">Clear</button>
+          <button id="copyBtn" class="px-3 py-1 sm:px-3 sm:py-1">Copy to clipboard</button>
+          <div class="sm:hidden flex justify-center mt-1">
+          <button id="clear" class=" px-8 py-1 sm:hidden sm:px-8 sm:py-1 sm:mr-5 ">Clear</button>
+        </div>
         </div>
       </div>
     </div>
     <!-- links -->
-    <footer class="border-2 flex w-full mt-auto justify-center absolute bottom-0 pb-1 py-3">
-      <span class="absolute left-0 font-light">Developed By <a class="underline decoration-1 font-light"
+    <footer class="border-2 flex w-full mt-auto mt-2 justify-center absolute sm:bottom-0 pb-1 py-3">
+      <span class="hidden sm:block  absolute left-0 font-light">Developed By <a class="underline decoration-1 font-light"
           href="https://github.com/FixxooXD" target="_blank">FixxooXD</a></span>
       <div class="flex flex-row  w-96 justify-center justify-around">
         <div><a href=""><i class="fa-brands fa-github text-2xl"></i></a></div>
