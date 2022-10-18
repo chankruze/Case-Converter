@@ -49,6 +49,7 @@ function updateCounter() {
 
 // CLEAR BTN
 clearBTN.addEventListener("click", () => {
+    console.log('yes')
     textarea.value = "";
     counterWD.innerText = "0";
     counterCH.innerText = "0";
@@ -149,7 +150,7 @@ sentenceBTN.addEventListener('click', () => {
     SentenceCASE();
 })
 function SentenceCASE() {
-    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, function(c){
+    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?\,]\s*\w)/g, function(c){
       return c.toUpperCase()
     });
     textarea.value = sentececase;
@@ -157,22 +158,18 @@ function SentenceCASE() {
 
 //  TITLECASE BTN
 titleBTN.addEventListener('click', () => {
+    
+    let str = textarea.value;
+    str.toLowerCase();
+    str =  str[0].toUpperCase() + str.slice(1);
 
-    str = textarea.value.toLowerCase().split(' ');
-    for (var i = 0; i < str.length; i++) {
-        // TODO
-        //   if(str[i].includes('\n')){
-        //      newStr =   str[i].replace(/(\r\n|\n|\r)/gm, " ")
-        //     //   console.log(newStr.split(" "));  
-        //       const Newsplit = newStr.split(" ");
-        //       console.log(Newsplit);
-        //       for(var j = 0; j < Newsplit.length; j++) {
-        //       Newsplit[j] = Newsplit[j][0].toUpperCase() + Newsplit[j].slice(1);
-        //       console.log(Newsplit[j]);
-        //     //   textarea.value = Newsplit.join(' ')
-        //     str[i] = `${Newsplit[0]}\n${Newsplit[1]}`
-        //       }
-        str[i] = str[i][0].toUpperCase() + str[i].slice(1);
-    }
-    textarea.value = str.join(' ');
+    var titlecASE = textarea.value.toLowerCase().replace(/(\s.)/g, function(c){
+        return c.toUpperCase()
+      });
+      titlecASE = titlecASE[0].toUpperCase() + titlecASE.slice(1);
+
+      textarea.value = titlecASE;
+
+
+    // }
 })
