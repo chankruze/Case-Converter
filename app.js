@@ -75,7 +75,7 @@ copyBTN.addEventListener('click', () => {
     textarea.setSelectionRange(0, 99999); // For mobile devices
 
     // Copy the text inside the text field
-    navigator.clipboard.writeText(textarea.value);
+    navigator.clipboard.textarea.innerText(textarea.value);
 })
 
 // INVERSE BTN
