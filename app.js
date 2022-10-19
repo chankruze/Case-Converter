@@ -10,7 +10,8 @@ const titleBTN = document.getElementById('titleBtn');
 const copyBTN = document.getElementById('copyBtn');
 const inverseBTN = document.getElementById('inverseBtn');
 const alternateBTN = document.getElementById('alternateBtn');
-const downloadBTN = document.getElementById('downloadBtn')
+const downloadBTN = document.getElementById('downloadBtn');
+let copiedText = document.getElementById('text');
 
 textarea.addEventListener("keyup", () => {
     updateCounter();
@@ -75,7 +76,12 @@ copyBTN.addEventListener('click', () => {
     textarea.setSelectionRange(0, 99999); // For mobile devices
 
     // Copy the text inside the text field
-    navigator.clipboard.textarea.innerText(textarea.value);
+    navigator.clipboard.writeText(textarea.value);
+    copiedText.style.display = 'block';
+    window.getSelection().removeAllRanges();
+    setTimeout(() => {
+        copiedText.style.display = 'none';
+    }, 900);
 })
 
 // INVERSE BTN
@@ -150,26 +156,25 @@ sentenceBTN.addEventListener('click', () => {
     SentenceCASE();
 })
 function SentenceCASE() {
-    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?\,]\s*\w)/g, function(c){
-      return c.toUpperCase()
+    var sentececase = textarea.value.toLowerCase().replace(/(^\s*\w|[\.\!\?\,]\s*\w)/g, function (c) {
+        return c.toUpperCase()
     });
     textarea.value = sentececase;
 }
 
 //  TITLECASE BTN
 titleBTN.addEventListener('click', () => {
-    
+
     let str = textarea.value;
     str.toLowerCase();
-    str =  str[0].toUpperCase() + str.slice(1);
+    str = str[0].toUpperCase() + str.slice(1);
 
-    var titlecASE = textarea.value.toLowerCase().replace(/(\s.)/g, function(c){
+    var titlecASE = textarea.value.toLowerCase().replace(/(\s.)/g, function (c) {
         return c.toUpperCase()
-      });
-      titlecASE = titlecASE[0].toUpperCase() + titlecASE.slice(1);
+    });
+    titlecASE = titlecASE[0].toUpperCase() + titlecASE.slice(1);
 
-      textarea.value = titlecASE;
+    textarea.value = titlecASE;
 
-
-    // }
 })
+
