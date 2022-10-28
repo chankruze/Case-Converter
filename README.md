@@ -1,28 +1,44 @@
-# Case-Converter
-#### Its a case-coverter tool which can change the case of any paragraph or line or words and its also helps in counting words, lines and characters.
-#### It also has download and copytoclipboaard Options/Feature in it.
+# Case Converter
 
+A handy utility website to format your nasty paragraphs with proper casing.
 
+## Features
 
-> ## Technologies Used
-* Html
-* Tailwind css & Css
-* Vanila Js
+- Sentence case
+- Lower case
+- Upper case
+- aLtErNaTe cAsE
+- Title case
+- Inverse case
+- word count
+- character count
+- line count
+- copy to clipboard
+- download text
 
+> ## Tech stack
 
+- HTML
+- CSS
+- JS (vanilla)
+- Tailwindcss
 
-> ## How to Run the project locally
-* #### Fork the Repo and clone the project.
-* #### Setup Npm in the project
+> ## Development
+
+To run your Remix app locally, make sure your project's local dependencies are installed:
+
+```bash
+npm install
 ```
-npm init
+
+Afterwards, start the development tailwindcss compilation in watch mode:
+
+```bash
+npm run dev
 ```
-* #### install tailwind css
+
+Once finished, run tailwindcss production build:
+
+```bash
+npm run build
 ```
-npm  install tailwindcss
-```
-* #### start working 
-```
-npx tailwindcss -i src/tailwind.css -o ./styles.css --watch
-```
-##### For more Guidance on installing Tailwindcss follow [Documentation](https://tailwindcss.com/docs/installation)

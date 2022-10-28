@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Realtime character counter and case converter",
   "scripts": {
+    "dev": "npm run build:css:dev",
+    "build": "npm run build:css:prod",
     "build:css:dev": "tailwindcss build -i ./assets/css/input.css -o ./assets/css/tailwind.css --watch",
     "build:css:prod": "NODE_ENV=production tailwindcss build -i ./assets/css/input.css -o ./assets/css/tailwind.css --minify"
   },
