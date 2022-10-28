@@ -1,154 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet" />
-  <title>Case-converter</title>
-  <style>
-    #Intro,
-    span,
-    textarea,
-    .text,
-    button {
-      font-family: "Exo 2", sans-serif;
-    }
-
-    button {
-      background-color: #ffab00;
-      color: white;
-    }
-
-    footer {
-      /* background-color: #D3DECB; */
-      background-color: grey;
-    }
-
-    /* @media only screen and (max-width: 320px) {
-        #links-div{
-          width: 100%;
-        }
-    }  */
-    i {
-      /* color: #f59e0b; */
-    }
-
-    .textarea-box {
-      border-color: #f8a922;
-    }
-
-    textarea:focus,
-    input:focus {
-      outline: 0;
-    }
-
-    *:focus {
-      outline: 0;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="w-full h-screen flex-col justify-center relative">
-    <!-- content-box -->
-    <div class="flex flex-col">
-      <div class="border-b-2 w-screen p-2 bg-amber-500 shadow-mg">
-        <h1 class="text-4xl" id="Intro">
-          <a href="./index.html">Case Converter</a>
-        </h1>
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>🔠 Case Converter</title>
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <!-- js -->
+    <script src="./assets/js/app.js" defer></script>
+  </head>
+  <body class="min-h-screen flex flex-col overflow-x-hidden overflow-y-auto bg-white">
+    <div class="flex-1 space-y-4">
+      <!-- header -->
+      <div class="p-2 bg-yellow-200">
+        <a href="./" class="text-xl sm:text-3xl font-bold font-exo2">Case Converter</a>
       </div>
-      <div class="flex flex-col ml-auto mr-auto px-2">
-        <div class="justify-center text-xl sm:text-xl mt-4" id="Intro">
-          Accidentally left the caps lock on and typed something, but can't be
-          bothered to start again and retype it all?
-        </div>
-        <div class="sm:text-xl mb-4 relative" id="Intro">
-          dont Bother just Simply enter your text and choose the case you want
-          to convert it to.
-          <div id="text" class="text ml-auto mr-4 absolute right-0 hidden mt-3 text-sm">
-            copied
-          </div>
-        </div>
-        <div class="mt-4">
-          <div id="text" class="text ml-auto mr-1 absolute hidden">
-            copied
-          </div>
-          <div class="textarea-box flex relative border-4">
-            <textarea name="" class="resize-none w-full h-80 px-3" id="textarea"></textarea>
-            <div class="text-2xl mr-2">
-              <div class="cursor-pointer">
-                <i id="copyBtn" class="fa-regular fa-copy p-2 rounded-lg bg-amber-300 mt-1 transition-all"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <span class="sm:ml-4">Characters: <span id="ch-counter">0</span></span>
-          <span class="ml-3 sm:ml-8">Words: <span id="wdCounter">0</span></span>
-          <span class="ml-3 sm:ml-8">Lines: <span id="linesCount">0</span></span>
-        </div>
-        <!-- All Buttons -->
-        <div class="ml-auto mr-auto mt-4 px-4 pl-4 aling-center">
-          <button id="sentenceBtn" class="px-3 py-1 ml-2 mr-1 sm:px-3 sm:py-1 sm:mr-5">
+      <!-- slogan -->
+      <div class="text-center sm:text-start sm:text-lg px-4">
+        Accidentally left the caps lock on and typed something, but can't be
+        bothered to start again and retype it all? Dont bother just simply enter
+        your text and choose the case you want to convert it to.
+      </div>
+      <!-- counters -->
+      <div class="flex gap-4 flex-wrap px-4 font-medium">
+        <p class="flex items-center">
+          <span class="px-2 py-1 bg-gray-100">Characters</span>
+          <span id="ch-counter" class="h-full px-2 py-1 bg-yellow-100">0</span>
+        </p>
+        <p class="flex items-center">
+          <span class="px-2 py-1 bg-gray-100">Words</span>
+          <span id="wdCounter" class="h-full px-2 py-1 bg-yellow-100">0</span>
+        </p>
+        <p class="flex items-center">
+          <span class="px-2 py-1 bg-gray-100">Lines</span>
+          <span id="linesCount" class="h-full px-2 py-1 bg-yellow-100">0</span>
+        </p>
+      </div>
+      <!-- text area -->
+      <div class="px-4">
+        <textarea
+          name=""
+          class="resize-y border-2 border-yellow-400 focus:outline-0 w-full h-80 p-2"
+          id="textarea"
+        ></textarea>
+      </div>
+      <!-- buttons group -->
+      <div class="flex items-center justify-between gap-4 px-4">
+        <!-- transformation buttons -->
+        <div class="flex items-center gap-2 overflow-x-auto">
+          <button
+            id="sentenceBtn"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
             Sentence case
           </button>
-          <button id="LowerBtn" class="px-3 py-1 sm:px-3 sm:py-1 sm:mr-5">
+          <button
+            id="LowerBtn"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
             Lower case
           </button>
-          <button id="upperBtn" class="px-3 py-1 ml-2 mt-1 sm:px-3 sm:py-1 sm:mr-5">
+          <button
+            id="upperBtn"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
             Upper case
           </button>
-          <button id="alternateBtn" class="px-3 py-1 ml-1 sm:px-3 sm:py-1 sm:mr-5">
-            aLtErNate case
+          <button
+            id="alternateBtn"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
+            aLtErNaTe cAsE
           </button>
-          <button id="titleBtn" class="px-3 py-1 mt-1 ml-4 sm:px-3 sm:py-1 sm:mr-5">
+          <button
+            id="titleBtn"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
             Title case
           </button>
-          <button id="inverseBtn" class="ml-2 px-3 py-1 sm:px-3 sm:py-1 sm:mr-5">
+          <button
+            id="inverseBtn"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
             Inverse case
           </button>
         </div>
-        <div class="mt-1 sm:flex sm:flex-row justify-center sm:mt-2 sm:mt-5">
-          <button value="download" id="downloadBtn" class="px-3 py-1 ml-2 sm:px-3 sm:py-1 sm:mr-5">
-            <span><i class="fa-solid fa-download"></i> </span>Download Text
+        <!-- action buttons -->
+        <div class="flex items-center flex-wrap gap-2">
+          <button
+            id="download"
+            class="py-2 px-4 whitespace-nowrap bg-blue-100 hover:bg-blue-200 duration-150 ease-in-out"
+          >
+            <i class="fa-solid fa-download"></i>
+            <span class="capitalize">download</span>
           </button>
-            <button id="clear" class="px-3 py-1 sm:px-8 sm:py-1 sm:mr-5">
-              <i class="fa-solid fa-eraser"></i> Clear
-            </button>
-          </div>
+          <button
+            id="clear"
+            class="py-2 px-4 whitespace-nowrap bg-red-100 hover:bg-red-200 duration-150 ease-in-out"
+          >
+            <i class="fa-solid fa-eraser"></i>
+            <span class="capitalize">clear</span>
+          </button>
+          <button
+            id="copy"
+            class="py-2 px-4 whitespace-nowrap bg-green-100 hover:bg-green-200 duration-150 ease-in-out"
+          >
+            <i class="fa-solid fa-copy"></i>
+            <span class="capitalize">copy</span>
+          </button>
         </div>
       </div>
     </div>
-    <!-- links -->
-    <footer class="flex w-full mt-auto mt-2 justify-center sm:justify-end absolute sm:bottom-0 pb-1 py-3">
-      <span class="hidden sm:block absolute left-0 font-light">Developed By
-        <a class="font-light text-amber-500" href="https://github.com/FixxooXD" target="_blank">FixxooXD</a></span>
-      <div class="flex flex-row w-80 justify-center justify-around">
-        <div>
-          <a href=""><i class="fa-brands fa-github text-2xl"></i></a>
-        </div>
-        <div>
-          <a href=""><i class="fa-brands fa-twitter text-2xl"></i></a>
-        </div>
-        <div>
-          <a href=""><i class="fa-brands fa-instagram text-2xl"></i></a>
-        </div>
-        <div>
-          <a href=""><i class="fa-brands fa-linkedin text-2xl"></i></a>
-        </div>
+    <!-- footer -->
+    <footer
+      class="flex flex-col-reverse sm:flex-row justify-center sm:justify-between items-center py-3 px-6 bg-yellow-50"
+    >
+      <!-- dev info -->
+      <p class="font-medium">
+        <span>Developed By</span>
+        <a
+          class="text-yellow-500 hover:bg-yellow-500 hover:text-white"
+          href="https://github.com/FixxooXD"
+          target="_blank"
+          >FixxooXD</a
+        >
+      </p>
+      <!-- links -->
+      <div class="flex justify-center items-center gap-2">
+        <a href="#" class="p-2 hover:text-yellow-500"
+          ><i class="fa-brands fa-github text-2xl"></i
+        ></a>
+        <a href="#" class="p-2 hover:text-yellow-500"
+          ><i class="fa-brands fa-twitter text-2xl"></i
+        ></a>
+        <a href="#" class="p-2 hover:text-yellow-500"
+          ><i class="fa-brands fa-instagram text-2xl"></i
+        ></a>
+        <a href="#" class="p-2 hover:text-yellow-500"
+          ><i class="fa-brands fa-linkedin text-2xl"></i
+        ></a>
       </div>
     </footer>
-  </div>
-
-  <script src="./app.js"></script>
-  <!-- npx tailwindcss -i src/tailwind.css -o ./styles.css --watch -->
-</body>
-
+  </body>
 </html>
