@@ -19,20 +19,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
     <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/tailwind.css" />
-    <link rel="stylesheet" href="./assets/css/app.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/app.css" /> -->
     <!-- js -->
+    <script src="./assets/js/utils.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
   </head>
-  <body class="min-h-screen flex flex-col overflow-x-hidden overflow-y-auto bg-white">
+  <body
+    class="min-h-screen flex flex-col overflow-x-hidden overflow-y-auto bg-white"
+  >
     <div class="flex-1 space-y-4">
       <!-- header -->
       <div class="p-2 bg-yellow-200">
-        <a href="./" class="text-xl sm:text-3xl font-bold font-exo2">Case Converter</a>
+        <a href="./" class="text-xl sm:text-3xl font-bold font-exo2"
+          >Case Converter</a
+        >
       </div>
       <!-- slogan -->
       <div class="text-center sm:text-start sm:text-lg px-4">
@@ -44,23 +49,24 @@
       <div class="flex gap-4 flex-wrap px-4 font-medium">
         <p class="flex items-center">
           <span class="px-2 py-1 bg-gray-100">Characters</span>
-          <span id="ch-counter" class="h-full px-2 py-1 bg-yellow-100">0</span>
+          <span id="characterCount" class="h-full px-2 py-1 bg-yellow-100"
+            >0</span
+          >
         </p>
         <p class="flex items-center">
           <span class="px-2 py-1 bg-gray-100">Words</span>
-          <span id="wdCounter" class="h-full px-2 py-1 bg-yellow-100">0</span>
+          <span id="wordCount" class="h-full px-2 py-1 bg-yellow-100">0</span>
         </p>
         <p class="flex items-center">
           <span class="px-2 py-1 bg-gray-100">Lines</span>
-          <span id="linesCount" class="h-full px-2 py-1 bg-yellow-100">0</span>
+          <span id="lineCount" class="h-full px-2 py-1 bg-yellow-100">0</span>
         </p>
       </div>
       <!-- text area -->
       <div class="px-4">
         <textarea
-          name=""
           class="resize-y border-2 border-yellow-400 focus:outline-0 w-full h-80 p-2"
-          id="textarea"
+          id="editor"
         ></textarea>
       </div>
       <!-- buttons group -->
@@ -68,37 +74,37 @@
         <!-- transformation buttons -->
         <div class="flex items-center gap-2 overflow-x-auto">
           <button
-            id="sentenceBtn"
+            id="btnLowerCase"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
+            lower case
+          </button>
+          <button
+            id="btnUpperCase"
+            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
+          >
+            UPPER CASE
+          </button>
+          <button
+            id="btnSentenceCase"
             class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
           >
             Sentence case
           </button>
           <button
-            id="LowerBtn"
+            id="btnTitleCase"
             class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
           >
-            Lower case
+            Title Case
           </button>
           <button
-            id="upperBtn"
-            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
-          >
-            Upper case
-          </button>
-          <button
-            id="alternateBtn"
+            id="btnAlternateCase"
             class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
           >
             aLtErNaTe cAsE
           </button>
           <button
-            id="titleBtn"
-            class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
-          >
-            Title case
-          </button>
-          <button
-            id="inverseBtn"
+            id="btnInverseCase"
             class="py-2 px-4 whitespace-nowrap bg-yellow-100 hover:bg-yellow-200 duration-150 ease-in-out"
           >
             Inverse case
@@ -107,21 +113,21 @@
         <!-- action buttons -->
         <div class="flex items-center flex-wrap gap-2">
           <button
-            id="download"
+            id="btnDownload"
             class="py-2 px-4 whitespace-nowrap bg-blue-100 hover:bg-blue-200 duration-150 ease-in-out"
           >
             <i class="fa-solid fa-download"></i>
             <span class="capitalize">download</span>
           </button>
           <button
-            id="clear"
+            id="btnClear"
             class="py-2 px-4 whitespace-nowrap bg-red-100 hover:bg-red-200 duration-150 ease-in-out"
           >
             <i class="fa-solid fa-eraser"></i>
             <span class="capitalize">clear</span>
           </button>
           <button
-            id="copy"
+            id="btnCopy"
             class="py-2 px-4 whitespace-nowrap bg-green-100 hover:bg-green-200 duration-150 ease-in-out"
           >
             <i class="fa-solid fa-copy"></i>
